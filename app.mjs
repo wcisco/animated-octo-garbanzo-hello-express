@@ -19,6 +19,12 @@ app.get('/will', (req, res) => {
 
 })
 
+app.get('/api/will', (req, res) => {
+  // res.send('barry. <a href="/">home</a>')
+  const myVar = 'Hello from server!';
+  res.json({ myVar });
+})
+
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`)
 })
