@@ -1,18 +1,25 @@
 import express from 'express'
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 
-const app = express()
-
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.use(express.static(join(__dirname, 'public')));
+
 app.get('/', (req, res) => {
-  res.send('Hello Express from Render')
+  res.send('Hello Express from Render. <a href="/will">will</a>')
 })
 
-// endpoints... middlewares... apis?
-// send an html file
+app.get('/will', (req, res) => {
+ 
+  res.sendFile(join(__dirname, 'public', 'will.html')) 
+
+})
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`)
 })
 
-// TODO: refactor to use env port.
