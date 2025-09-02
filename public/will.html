@@ -26,7 +26,14 @@
     <button onclick="sendUrl()">Send URL Param</button>
     <div id="urlResult"></div>
   </div>
+  <hr>
 
+  <form id="postForm" method="POST" action="/api/body">
+    <label>POST (body): </label>
+    <input id="postFormName" name="name" type="text" placeholder="Enter name">
+    <button type="submit">Submit POST</button>
+  </form>
+  <div id="postFormResult"></div>
 
   <div>
     <h3>POST Body</h3>
