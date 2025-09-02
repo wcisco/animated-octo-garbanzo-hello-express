@@ -13,16 +13,11 @@ app.get('/', (req, res) => {
   res.send('Hello Express from Render. <a href="/will">will</a>')
 })
 
+
 app.get('/will', (req, res) => {
- 
+  // res.send('barry. <a href="/">home</a>')
   res.sendFile(join(__dirname, 'public', 'will.html')) 
 
-})
-
-app.get('/api/will', (req, res) => {
-  // res.send('barry. <a href="/">home</a>')
-  const myVar = 'Hello from server!';
-  res.json({ myVar });
 })
 
 app.listen(PORT, () => {
