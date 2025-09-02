@@ -19,6 +19,15 @@ app.get('/will', (req, res) => {
   res.sendFile(join(__dirname, 'public', 'will.html')) 
 
 })
+app.get('/api/will', (req, res) => {
+  const myVar = 'Hello from server!';
+  res.json({ myVar });
+});
+
+
+app.get('/api/query', (req, res) =>{
+  console.log(req);
+});
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`)
