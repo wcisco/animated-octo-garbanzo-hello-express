@@ -43,7 +43,7 @@ run().catch(console.dir);
 
 
 app.get('/', (req, res) => {
-  res.send('Hello Express from Render. <a href="/will">will</a>')
+  res.send('Add places that you have been! <a href="/will">My Locations! Click Here!</a>')
 })
 
 
