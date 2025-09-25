@@ -26,28 +26,107 @@
     10. London, United Kingdom<br>
   </p>
 
-  <div>
-    <h3>Locations!</h3>
-    <input id="queryName" type="text" placeholder="Enter name">
-    <button onclick="sendQuery()">Enter</button>
-    <div id="queryResult"></div>
-  </div>
 
-  <hr>
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">📚 Student Management System</h1>
+    
+    <!-- Database Management Section -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card bg-light">
+                <div class="card-body text-center">
+                    <h5 class="card-title">🛠️ Database Management</h5>
+                    <button class="btn btn-success me-2" onclick="seedDatabase()">🌱 Seed Database</button>
+                    <button class="btn btn-danger" onclick="cleanupDatabase()">🧹 Cleanup Database</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <form id="postForm" method="POST" action="/api/body">
-    <label>POST (body): </label>
-    <input id="postFormName" name="name" type="text" placeholder="Enter name">
-    <button type="submit">Submit POST</button>
-  </form>
-  <div id="postFormResult"></div>
+    <!-- Add Student Form -->
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>➕ Add New Student</h5>
+                </div>
+                <div class="card-body">
+                    <form id="addStudentForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="age" class="form-label">Age</label>
+                            <input type="number" class="form-control" id="age" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="grade" class="form-label">Grade</label>
+                            <input type="text" class="form-control" id="grade" placeholder="A, B+, C, etc." required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Student</button>
+                    </form>
+                </div>
+            </div>
+        </div>
 
-  <div>
-    <h3>POST Body</h3>
-    <input id="bodyName" type="text" placeholder="Enter name">
-    <button onclick="sendBody()">Send POST Body</button>
-    <div id="bodyResult"></div>
-  </div>
+        <!-- Update Student Form -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>✏️ Update Student</h5>
+                </div>
+                <div class="card-body">
+                    <form id="updateStudentForm">
+                        <div class="mb-3">
+                            <label for="updateId" class="form-label">Student ID</label>
+                            <input type="text" class="form-control" id="updateId" placeholder="Click on a student ID below" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="updateName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="updateName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="updateAge" class="form-label">Age</label>
+                            <input type="number" class="form-control" id="updateAge" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="updateGrade" class="form-label">Grade</label>
+                            <input type="text" class="form-control" id="updateGrade" required>
+                        </div>
+                        <button type="submit" class="btn btn-warning">Update Student</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Students List -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5>👥 All Students</h5>
+                    <button class="btn btn-info btn-sm" onclick="loadStudents()">🔄 Refresh</button>
+                </div>
+                <div class="card-body">
+                    <div id="studentsList">
+                        <p class="text-muted">Click "Refresh" to load students...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Messages -->
+    <div id="messages" class="mt-3"></div>
+  
+
+  
+
+  
+
+  
 
   <script>
     function sendQuery() {
