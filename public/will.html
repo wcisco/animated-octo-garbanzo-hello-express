@@ -10,23 +10,16 @@
 
 <body>
   <h1>will page</h1>
-  <a href="/"> home</a>
-  <p>{{myVar}}</p>
-
+  <a href="/"> Back to Home!</a>
+  <p>Enter the places you have visited.</p>
 
   <div>
-    <h3>Query Parameter</h3>
+    <h3>Locations!</h3>
     <input id="queryName" type="text" placeholder="Enter name">
-    <button onclick="sendQuery()">Send Query</button>
+    <button onclick="sendQuery()">Enter</button>
     <div id="queryResult"></div>
   </div>
 
-  <div>
-    <h3>URL Parameter</h3>
-    <input id="urlId" type="text" placeholder="Enter id">
-    <button onclick="sendUrl()">Send URL Param</button>
-    <div id="urlResult"></div>
-  </div>
   <hr>
 
   <form id="postForm" method="POST" action="/api/body">
