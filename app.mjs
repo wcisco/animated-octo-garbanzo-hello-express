@@ -43,15 +43,11 @@ run().catch(console.dir);
 
 
 app.get('/', (req, res) => {
-  res.send('Add places that you have been! <a href="/will">My Locations! Click Here!</a>')
+  res.sendFile(join(__dirname, 'public', 'will.html'))
+  //res.send('Add places that you have been! <a href="/will">My Locations! Click Here!</a>')
 })
 
 
-app.get('/will', (req, res) => {
-  // res.send('barry. <a href="/">home</a>')
-  res.sendFile(join(__dirname, 'public', 'will.html')) 
-
-})
 app.get('/api/will', (req, res) => {
   const myVar = 'Hello from server!';
   res.json({ myVar });
